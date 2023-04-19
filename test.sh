@@ -1,7 +1,8 @@
-echo " TERMUX-X11 + PROOT-DISTRO AUTO INSTALLER BY NATHANXX "
+echo " TERMUX-X11 + PROOT-DISTRO EASY INSTALLER BY NATHANXX "
 pkg update
 pkg install x11-repo
 pkg install xwayland xorg-server-xvfb
+cd storage/shared/Download/termux-x11
 dpkg -i termux-x11.deb
 echo 'allow-external-apps = true' >> ~/.termux/termux.properties
 termux-reload-settings
