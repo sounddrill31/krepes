@@ -16,6 +16,6 @@ source build/envsetup.sh
 # Build the ROM
 lunch lineage_RMX1941-userdebug
 
-#beelding
+# Build:D
 
 make bacon
