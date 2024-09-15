@@ -1,5 +1,5 @@
-rm -rf out/target/product/realme/RMX1941/*
-rm -rf .repo/local_manifests/  && # Clone local_manifests repository
+rm -rf .repo/local_manifests/  && 
+# Clone local_manifests repository
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs --depth=1
 #clone dev tree
 git clone https://github.com/P-Salik/local_manifest --depth 1 -b lineage .repo/local_manifests &&
