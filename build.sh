@@ -15,8 +15,6 @@ if [ ! 0 == 0 ]
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
-export TARGET_NO_KERNEL=false
-export PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS=false
 export BUILD_USERNAME=nathturu
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
