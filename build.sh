@@ -13,7 +13,5 @@ source build/envsetup.sh
  
 # Build the ROM
 lunch blaze_RMX1941-userdebug
-
-# Build:D
 mka installclean
 mka bacon
