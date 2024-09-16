@@ -2,7 +2,7 @@ rm -rf .repo/local_manifests/  &&
 # Clone local_manifests repository
 repo init -u https://github.com/crdroidandroid/android.git -b 12.1 --git-lfs --depth=1
 # clone dev tree
-git clone https://github.com/nathannxx/local_manifests_RMX1941.git --depth 1 .repo/local_manifests &&
+git clone https://github.com/nathannxx/local_manifests_RMX1941.git --depth 1 -b RMX1941 .repo/local_manifests &&
 
 if [ ! 0 == 0 ]
 
