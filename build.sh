@@ -5,7 +5,7 @@ git clone https://github.com/nathannxx/local_manifest.git --depth 1 -b blaze .re
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
-export BUILD_USERNAME=nathturu
+export BUILD_USERNAME=natehiggas
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
 export WITH_GMS=true
