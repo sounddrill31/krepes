@@ -18,6 +18,7 @@ if [ ! 0 == 0 ]
 export BUILD_USERNAME=nathturu
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
+export WITH_GMS=true
 source build/envsetup.sh
  
 # Build the ROM
