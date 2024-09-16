@@ -1,12 +1,12 @@
 rm -rf .repo/local_manifests/  && 
 # Clone local_manifests repository
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs --depth=1
-#clone dev tree
-git clone https://github.com/P-Salik/local_manifest --depth 1 -b lineage .repo/local_manifests &&
+# clone dev tree
+git clone https://github.com/nathannxx/local_manifests_RMX1941.git --depth 1 .repo/local_manifests &&
 
 if [ ! 0 == 0 ]
 
- then   curl -o .repo/local_manifests https://github.com/P-Salik/local_manifest
+ then   curl -o .repo/local_manifests https://github.com/nathannxx/local_manifests_RMX1941.git
 
    echo Git Clone Failed, downloading through curl instead...
 
@@ -15,15 +15,15 @@ if [ ! 0 == 0 ]
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
+export TARGET_NO_KERNEL=false
+export PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS=false
 export BUILD_USERNAME=nathturu
 export BUILD_HOSTNAME=crave
-#export TARGET_PRODUCT=lineage_RMX1941
-#export TARGET_RELEASE=RMX1941
 export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch lineage_RMX1941-userdebug
+lunch crdroid_RMX1941-userdebug
 
 # Build:D
 
