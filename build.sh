@@ -24,5 +24,5 @@ source build/envsetup.sh
 lunch blaze_RMX1941-userdebug
 
 # Build:D
-
-make bacon
+mka installclean
+mka bacon
