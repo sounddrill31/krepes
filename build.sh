@@ -17,4 +17,4 @@ export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
  
 # Build the ROM
-blissify -g RMX1941
+blissify -g -d RMX1941
