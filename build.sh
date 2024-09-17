@@ -18,4 +18,4 @@ export TZ=Asia/Jakarta
  
 # Build the ROM
 echo ' BUILD STARTS NOW !!! '
-blissify -g -d RMX1941
+blissify -c RMX1941
