@@ -13,7 +13,6 @@ git clone https://github.com/P-Salik/vendor_realme_RMX1941-ims.git --depth 1 -b 
 /opt/crave/resync.sh
 . build/envsetup.sh
 # Set up build environment
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=natehiggas
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
