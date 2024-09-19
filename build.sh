@@ -4,20 +4,28 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install dialog
 # Grabbing Bliss required Dependencies
 sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip squashfs-tools python-mako libssl-dev ninja-build lunzip syslinux syslinux-utils gettext genisoimage gettext bc xorriso xmlstarlet -y
 
-rm -rf .repo/local_manifests/  &&
-# Clone local_manifests repository
+# Cleanup
+rm -rf device/realme/RMX1941
+rm -rf kernel/realme/RMX1941
+rm -rf vendor/realme/RMX1941
+rm -rf vendor/realme/RMX1941-ims
+
+# Initialize ROM Repo
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next --git-lfs
+
 # Cloning Depis Teri
 git clone https://github.com/nathannxx/android_device_realme_RMX1941 --depth 1 -b bless device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b Sv2 vendor/realme/RMX1941
 git clone https://github.com/P-Salik/vendor_realme_RMX1941-ims.git --depth 1 -b lineage-20 vendor/realme/RMX1941-ims
 echo 'Cloning tree success !!, Now syncing will begin shortly'
+
 # Sync the repositories
 /opt/crave/resync.sh && 
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 echo 'Sync Success!!'
 . build/envsetup.sh
+
 # Set up build environment
 export BUILD_USERNAME=natehiggas
 export BUILD_HOSTNAME=crave
