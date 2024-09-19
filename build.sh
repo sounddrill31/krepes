@@ -12,8 +12,11 @@ git clone https://github.com/nathannxx/android_device_realme_RMX1941 --depth 1 -
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b Sv2 vendor/realme/RMX1941
 git clone https://github.com/P-Salik/vendor_realme_RMX1941-ims.git --depth 1 -b lineage-20 vendor/realme/RMX1941-ims
+echo 'Cloning tree success !!, Now syncing will begin shortly'
 # Sync the repositories
-/opt/crave/resync.sh
+/opt/crave/resync.sh && 
+repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
+echo 'Sync Success!!'
 . build/envsetup.sh
 # Set up build environment
 export BUILD_USERNAME=natehiggas
