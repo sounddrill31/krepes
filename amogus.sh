@@ -10,15 +10,13 @@ repo init -u https://github.com/AmogOS-Rom/android_manifest/ -b thirteen --git-l
 # Cloning Depis Teri
 git clone https://github.com/nathannxx/android_device_realme_RMX1941 --depth 1 -b amogus device/realme/RMX1941
 git clone https://github.com/nathannxx/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
-git clone https://github.com/nathannxx/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
+git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/P-Salik/vendor_realme_RMX1941-ims.git --depth 1 -b lineage-20 vendor/realme/RMX1941-ims
 echo 'Cloning tree success !!, Now syncing will begin shortly'
 
 # Sync the repositories
 /opt/crave/resync.sh && 
 echo 'Sync Success!!'
-unset GAPPS
-export AMOGOS_MAINTAINER=NateHiggas00
 . build/envsetup.sh
 
 # Set up build environment
