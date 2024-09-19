@@ -33,6 +33,12 @@ echo 'Sync Success!!'
 export BUILD_USERNAME=natehiggas
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
+
+# remove gheyness of some rarts
+rm -rf android_vendor_qcom_opensource_packages_apps_Bluetooth
+rm -rf android_vendor_qcom_opensource_system_bt
+rm -rf android_vendor_qcom_opensource_bluetooth_ext
+rm -rf android_hardware_xiaomi
  
 # Build the ROM
 echo 'BUILD STARTS NOW !!!'
