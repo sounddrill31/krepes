@@ -12,6 +12,7 @@ echo 'CLEANING UP'
 rm -rf device/realme/RMX1941
 rm -rf kernel/realme/RMX1941
 rm -rf vendor/realme/RMX1941
+rm -rf vendor/realme/RMX1941-ims
 
 # Initialize ROM Repo
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next --git-lfs
@@ -20,6 +21,7 @@ repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next 
 git clone https://github.com/nathannxx/android_device_realme_RMX1941_Backup --depth 1 -b bliss device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/nathannxx/android_vendor_realme_RMX1941_Backup --depth 1 -b twelve-L vendor/realme/RMX1941
+git clone https://github.com/P-Salik/android_vendor_realme_RMX1941-ims.git --depth 1 -b twelve vendor/realme/RMX1941-ims
 
 echo 'CLONING TREE SUCCESS !!, NOW SYNCING WILL BEGIN SHORTLY'
 
