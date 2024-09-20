@@ -20,17 +20,13 @@ repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next 
 git clone https://github.com/nathannxx/android_device_realme_RMX1941_Backup --depth 1 -b bliss device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/nathannxx/android_vendor_realme_RMX1941_Backup --depth 1 -b twelve-L vendor/realme/RMX1941
+
 echo 'CLONING TREE SUCCESS !!, NOW SYNCING WILL BEGIN SHORTLY'
 
 # Sync the repositories
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 echo 'Sync Success!!'
 . build/envsetup.sh
-
-# Set up build environment
-export BUILD_USERNAME=natehiggas
-export BUILD_HOSTNAME=crave
-export TZ=Asia/Jakarta
 
 # Build the ROM
 echo 'BUILD STARTS NOW !!!'
