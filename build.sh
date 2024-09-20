@@ -8,20 +8,19 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git-co
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
 
 # Cleanup
+echo 'CLEANING UP'
 rm -rf device/realme/RMX1941
 rm -rf kernel/realme/RMX1941
 rm -rf vendor/realme/RMX1941
-rm -rf vendor/realme/RMX1941-ims
 
 # Initialize ROM Repo
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next --git-lfs
 
 # Cloning Depis Teri
-git clone https://github.com/nathannxx/android_device_realme_RMX1941 --depth 1 -b bless device/realme/RMX1941
+git clone https://github.com/nathannxx/android_device_realme_RMX1941_Backup --depth 1 -b bliss device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
-git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b Sv2 vendor/realme/RMX1941
-git clone https://github.com/P-Salik/vendor_realme_RMX1941-ims.git --depth 1 -b lineage-20 vendor/realme/RMX1941-ims
-echo 'Cloning tree success !!, Now syncing will begin shortly'
+git clone https://github.com/nathannxx/android_vendor_realme_RMX1941_Backup --depth 1 -b twelve-L vendor/realme/RMX1941
+echo 'CLONING TREE SUCCESS !!, NOW SYNCING WILL BEGIN SHORTLY'
 
 # Sync the repositories
 /opt/crave/resync.sh && 
@@ -34,12 +33,6 @@ export BUILD_USERNAME=natehiggas
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
 
-# remove gheyness of some rarts
-rm -rf android_vendor_qcom_opensource_packages_apps_Bluetooth
-rm -rf android_vendor_qcom_opensource_system_bt
-rm -rf android_vendor_qcom_opensource_bluetooth_ext
-rm -rf android_hardware_xiaomi
- 
 # Build the ROM
 echo 'BUILD STARTS NOW !!!'
 blissify -g -d RMX1941
