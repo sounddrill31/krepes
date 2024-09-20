@@ -31,5 +31,7 @@ echo 'Sync Success!!'
 . build/envsetup.sh
 
 # Build the ROM
+export BUILD_USERNAME=NathannxX
+export BUILD_HOSTNAME=YouDeer
 echo 'BUILD STARTS NOW !!!'
 blissify -g -d RMX1941
