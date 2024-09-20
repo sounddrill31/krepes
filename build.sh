@@ -23,7 +23,6 @@ git clone https://github.com/nathannxx/android_vendor_realme_RMX1941_Backup --de
 echo 'CLONING TREE SUCCESS !!, NOW SYNCING WILL BEGIN SHORTLY'
 
 # Sync the repositories
-/opt/crave/resync.sh && 
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 echo 'Sync Success!!'
 . build/envsetup.sh
