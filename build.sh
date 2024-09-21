@@ -27,7 +27,8 @@ echo 'CLONING TREE SUCCESS !!, NOW SYNCING WILL BEGIN SHORTLY'
 
 # Sync the repositories
 /opt/crave/resync.sh && 
-echo 'Sync Success!!'
+repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
+echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
