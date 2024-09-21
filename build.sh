@@ -26,7 +26,7 @@ git clone https://github.com/P-Salik/android_vendor_realme_RMX1941-ims.git --dep
 echo 'CLONING TREE SUCCESS !!, NOW SYNCING WILL BEGIN SHORTLY'
 
 # Sync the repositories
-repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune --fail-fast
+/opt/crave/resync.sh && 
 echo 'Sync Success!!'
 . build/envsetup.sh
 
