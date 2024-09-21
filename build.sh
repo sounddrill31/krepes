@@ -35,4 +35,4 @@ echo 'Setup Environment begins'
 export BUILD_USERNAME=NathannxX
 export BUILD_HOSTNAME=YouDeer
 echo 'BUILD STARTS NOW !!!'
-blissify -g -d RMX1941
+blissify RMX1941
