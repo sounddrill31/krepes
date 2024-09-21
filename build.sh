@@ -39,6 +39,7 @@ git clone https://github.com/nathannxx/android_vendor_realme_RMX1941_Backup --de
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941-ims.git --depth 1 -b twelve vendor/realme/RMX1941-ims
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
 git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-12.1 device/mediatek/sepolicy_vndr
+
 # Sync the repositories
 echo "Sync begin"
 /opt/crave/resync.sh && 
