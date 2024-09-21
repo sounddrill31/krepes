@@ -22,10 +22,9 @@ for dir in "${directories[@]}"; do
         echo "Deleting $dir..."
         rm -rf "$dir"
     else
-        echo "$dir does not exist. Cloning..."
+        echo "$dir does not exist. yay!"
     fi
 done
-
 
 # Initialize ROM Repo
 echo "Initialize ROM Repo"
