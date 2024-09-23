@@ -8,8 +8,8 @@ git clone https://github.com/nathannxx/local_manifests_ngising --depth 1 -b ngis
 
 # Set up build environment
 export BUILD_USERNAME=nathannxx 
- export BUILD_HOSTNAME=YouDeer
- source build/envsetup.sh && 
+export BUILD_HOSTNAME=YouDeer
+source build/envsetup.sh && 
 
 # Build the ROM
 lunch lineage_RMX1941-userdebug && make installclean && brunch RMX1941
