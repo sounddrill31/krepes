@@ -42,13 +42,13 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 
 # Sync the repositories
 echo "Sync begin"
-/opt/crave/resync.sh && 
+repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
-export BUILD_USERNAME=NathannxX
-export BUILD_HOSTNAME=YouDeer
+export BUILD_USERNAME=nathannxx
+export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW !!!"
 blissify RMX1941
