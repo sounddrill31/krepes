@@ -14,7 +14,7 @@ git clone https://github.com/nathannxx/local_manifests_nss.git --depth 1 -b nss 
 
 # Sync the repositories
 echo "Sync begin"
-  repo sync -c --force-sync --no-tags --no-clone-bundle
+repo sync -c --force-sync --no-tags --no-clone-bundle
 repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
 echo 'Setup Environment begins'
 . build/envsetup.sh
