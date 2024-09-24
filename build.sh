@@ -27,18 +27,13 @@ for dir in "${directories[@]}"; do
     fi
 done
 
-# Initialize ROM Repo
-echo "Initialize ROM Repo"
+# Initialize ROM and Device manifests
+echo ' Initialize ROM and Device manifests '
+rm -rf .repo/local_manifests/ &&
+
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next --git-lfs
 
-# Cloning Depis Teri
-echo "Cloning Trees"
-git clone https://github.com/nathannxx/android_device_realme_RMX1941_Backup --depth 1 -b bliss device/realme/RMX1941
-git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
-git clone https://github.com/nathannxx/android_vendor_realme_RMX1941_Backup --depth 1 -b twelve-L vendor/realme/RMX1941
-git clone https://github.com/P-Salik/android_vendor_realme_RMX1941-ims.git --depth 1 -b twelve vendor/realme/RMX1941-ims
-git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
-git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-12.1 device/mediatek/sepolicy_vndr
+git clone https://github.com/nathannxx/local_manifests_RMX1941 --depth 1 -b RMX1941 .repo/local_manifests
 
 # Sync the repositories
 echo "Sync begin"
