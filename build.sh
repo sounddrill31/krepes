@@ -6,37 +6,15 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install dialog
 echo "Grabbing Bliss required Dependencies"
 sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev-i386 lib32ncurses-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip squashfs-tools python3-mako libssl-dev ninja-build lunzip syslinux syslinux-utils gettext genisoimage gettext bc xorriso xmlstarlet -y
 
-# Clean up trees and stuff before cloning
-echo "Clean up trees and stuff before cloning"
-directories=(
-    "device/realme/RMX1941"
-    "kernel/realme/RMX1941"
-    "vendor/realme/RMX1941"
-    "vendor/realme/RMX1941-ims"
-    "prebuilts/clang/host/linux-x86/clang-r353983c"
-    "device/mediatek/sepolicy_vndr"
-)
-
-# Loop through each directory and check for existence
-for dir in "${directories[@]}"; do
-    if [ -e "$dir" ]; then
-        echo "Deleting $dir..."
-        rm -rf "$dir"
-    else
-        echo "$dir does not exist. yay!"
-    fi
-done
-
-# Initialize ROM and Device manifests
+# Initialize ROM and clone Device manifests
 echo ' Initialize ROM and Device manifests '
 rm -rf .repo/local_manifests/ &&
-repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next --git-lfs
-
-git clone https://github.com/nathannxx/local_manifests_RMX1941 --depth 1 -b RMX1941 .repo/local_manifests
+repo init -u https://github.com/NusantaraProject-ROM/android_manifest -b 10
+git clone https://github.com/nathannxx/local_manifests_nss.git --depth 1 -b nss .repo/local_manifests
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
+  repo sync -c --force-sync --no-tags --no-clone-bundle
 repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
 echo 'Setup Environment begins'
 . build/envsetup.sh
@@ -45,4 +23,5 @@ echo 'Setup Environment begins'
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW !!!"
-blissify RMX1941
+lunch nad_RMX1941-userdebug
+mka nad -j
