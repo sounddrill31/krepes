@@ -30,7 +30,6 @@ done
 # Initialize ROM and Device manifests
 echo ' Initialize ROM and Device manifests '
 rm -rf .repo/local_manifests/ &&
-
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next --git-lfs
 
 git clone https://github.com/nathannxx/local_manifests_RMX1941 --depth 1 -b RMX1941 .repo/local_manifests
