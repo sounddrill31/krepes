@@ -15,4 +15,4 @@ export BUILD_HOSTNAME=YouDeer
 . build/envsetup.sh
 
 # Build the ROM
-lunch lineage_RMX1941-userdebug && make installclean && brunch RMX1941
+lunch lineage_RMX1941-userdebug && brunch RMX1941
