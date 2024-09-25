@@ -41,7 +41,7 @@ export BUILD_USERNAME=Frost
 export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
-lunch treble_arm64_bvN-userdebug
+lunch treble_arm64_bvN-user
 make systemimage
 
 if grep -q "BtmBypassExtraAclSetup" out/*error*.log ; then
@@ -55,4 +55,23 @@ cd out/target/product/phhgsi_arm64_ab/
 
 zip -r9 crdroid2024.zip system.img
 
-curl -F "file=@crdroid2024.zip" https://temp.sh/upload
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
+
+curl bashupload.com -T crdroid2024.zip
