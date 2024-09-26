@@ -14,7 +14,7 @@ export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=YouDeer
 # RisingOS spesifics
 export RISING_CHIPSET="Helio P22"
-export RISING_MAINTAINER="nathannxx"
+export RISING_MAINTAINER="nathan :3"
 export RISING_PACKAGE_TYPE="VANILLA AOSP"
 export RISING_BATTERY="4000 mAh"
 export TARGET_ENABLE_BLUR=false
