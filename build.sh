@@ -1,12 +1,12 @@
 # Initialize ROM and clone Device manifests
 echo ' Initialize ROM and Device manifests '
 rm -rf .repo/local_manifests/ &&
-repo init --depth=1 -u https://github.com/Corvus-AOSP/android_manifest.git -b 12
+repo init -u https://github.com/bananadroid/android_manifest.git -b 12
 git clone https://github.com/nathannxx/local_manifests_nss.git --depth 1 -b nss .repo/local_manifests
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
 echo 'Setup Environment begins'
 . build/envsetup.sh
@@ -15,5 +15,5 @@ echo 'Setup Environment begins'
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW !!!"
-lunch corvus_RMX1941-userdebug
-make corvus
+lunch banana_RMX1941-userdebug
+m banana
