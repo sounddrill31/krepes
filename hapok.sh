@@ -2,7 +2,7 @@
 echo ' Initialize ROM and Device manifests '
 rm -rf .repo/local_manifests/ &&
 repo init -u https://github.com/Havoc-OS-Revived/android_manifest.git -b eleven --git-lfs
-git clone https://github.com/nathannxx/local_manifests_hfc.git --depth 1 -b hfc .repo/local_manifests
+git clone https://github.com/nathannxx/local_manifests_hfc --depth 1 -b hfc .repo/local_manifests
 
 # Sync the repositories
 echo "Sync begin"
