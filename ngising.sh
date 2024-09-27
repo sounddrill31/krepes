@@ -13,13 +13,6 @@ repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
 export BUILD_USERNAME=nathannxx 
 export BUILD_HOSTNAME=YouDeer
 # RisingOS spesifics
-export RISING_CHIPSET="Helio P22"
-export RISING_MAINTAINER="nathan :3"
-export RISING_PACKAGE_TYPE="VANILLA AOSP"
-export RISING_BATTERY="4000 mAh"
-export TARGET_ENABLE_BLUR=false
-export TARGET_HAS_UDFPS=false
-export TARGET_USE_PIXEL_FINGERPRINT=false
 . build/envsetup.sh
 
 # Build the ROM
