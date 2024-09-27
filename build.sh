@@ -6,8 +6,8 @@ git clone https://github.com/nathannxx/local_manifests_nss.git --depth 1 -b nss 
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
+rm -rf platform/prebuilts/clang/host/linux-x86
+/opt/crave/resync.sh
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
