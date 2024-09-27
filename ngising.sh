@@ -23,4 +23,4 @@ export TARGET_USE_PIXEL_FINGERPRINT=false
 . build/envsetup.sh
 
 # Build the ROM
-lunch lineage_RMX1941-userdebug && brunch RMX1941
+brunch "RMX1941" userdebug
