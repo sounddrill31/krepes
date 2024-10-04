@@ -1,3 +1,5 @@
+wget https://raw.githubusercontent.com/nathannxx/gabut/refs/heads/main/deps.sh; bash deps.sh; rm deps.sh; clear
+
 # Initialize ROM and clone Device manifests
 echo ' Initialize ROM and Device manifests '
 rm -rf .repo/local_manifests/ &&
