@@ -16,4 +16,4 @@ export BUILD_HOSTNAME=YouDeer
 
 # Build the ROM
 lunch afterlife_RMX1941-userdebug
-m afterlife -j$
+m afterlife -j8
