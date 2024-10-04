@@ -6,9 +6,8 @@ git clone https://github.com/nathannxx/local_manifests_hfc --depth 1 -b hfc .rep
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c -j7 --force-sync --no-clone-bundle --no-tags
 
-repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
