@@ -13,6 +13,7 @@ echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
+export USE_CCACHE=1
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW !!!"
