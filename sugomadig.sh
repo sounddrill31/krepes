@@ -11,9 +11,8 @@ echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
-export WITH_GMS=true
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW !!!"
-lunch sigma_RMX1941-userdebug
+lunch sigma_RMX1941-userdebug-userdebug
 make bacon
