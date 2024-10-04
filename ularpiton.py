@@ -1,57 +1,66 @@
 import platform
 import subprocess
 import os
+import socket
 
-# Function to check if Python 2 is installed
-def check_python2():
-    try:
-        subprocess.check_output(['python2', '-V'])
-        return True
-    except subprocess.CalledProcessError:
-        return False
-
-# Function to install Python 2 from source
-def install_python2_from_source():
-    try:
-        # Download Python 2.7.9
-        subprocess.check_call(['wget', 'https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz'])
-        
-        # Extract the downloaded tarball
-        subprocess.check_call(['sudo', 'tar', 'xzf', 'Python-2.7.9.tgz'])
-        
-        # Change directory to the extracted folder
-        os.chdir('Python-2.7.9')
-        
-        # Configure and install Python
-        subprocess.check_call(['sudo', './configure', '--enable-optimizations'])
-        subprocess.check_call(['sudo', 'make', 'altinstall'])
-        
-        # Verify installation
-        subprocess.check_output(['python2.7', '-V'])
-        
-        # Create a symlink for python2
-        subprocess.check_call(['sudo', 'ln', '-sfn', '/usr/local/bin/python2.7', '/usr/bin/python2'])
-        
-        # Update alternatives to use python2
-        subprocess.check_call(['sudo', 'update-alternatives', '--install', '/usr/bin/python', 'python', '/usr/bin/python2', '1'])
-        
-        print("Python 2.7.9 installed successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to install Python 2: {e}")
-
-# Function to install Python 3 if not already installed
-def install_python3():
-    try:
-        subprocess.check_call(['sudo', 'apt', 'update'])
-        subprocess.check_call(['sudo', 'apt', 'install', 'python3'])
-        print("Python 3 installed successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to install Python 3: {e}")
-
-# Main function to handle installation based on OS version
+# Main function to handle installation based on OS version and hostname
 def main():
+    # Get the hostname of the machine
+    hostname = socket.gethostname()
+    
+    # Check for specific hostnames to stop execution
+    if hostname in ['crave-devspaces', 'foss', 'admin', 'runner'] or hostname.startswith('fv-az'):
+        print(f"Script stopped: This script should not run on {hostname}.")
+        return
+
     os_name = platform.system()
     os_version = platform.release()
+
+    # Function to check if Python 2 is installed
+    def check_python2():
+        try:
+            subprocess.check_output(['python2', '-V'])
+            return True
+        except subprocess.CalledProcessError:
+            return False
+
+    # Function to install Python 2 from source
+    def install_python2_from_source():
+        try:
+            # Download Python 2.7.9
+            subprocess.check_call(['wget', 'https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz'])
+            
+            # Extract the downloaded tarball
+            subprocess.check_call(['sudo', 'tar', 'xzf', 'Python-2.7.9.tgz'])
+            
+            # Change directory to the extracted folder
+            os.chdir('Python-2.7.9')
+            
+            # Configure and install Python
+            subprocess.check_call(['sudo', './configure', '--enable-optimizations'])
+            subprocess.check_call(['sudo', 'make', 'altinstall'])
+            
+            # Verify installation
+            subprocess.check_output(['python2.7', '-V'])
+            
+            # Create a symlink for python2
+            subprocess.check_call(['sudo', 'ln', '-sfn', '/usr/local/bin/python2.7', '/usr/bin/python2'])
+            
+            # Update alternatives to use python2
+            subprocess.check_call(['sudo', 'update-alternatives', '--install', '/usr/bin/python', 'python', '/usr/bin/python2', '1'])
+            
+            print("Python 2.7.9 installed successfully.")
+        except subprocess.CalledProcessError as e:
+            print(f"Failed to install Python 2: {e}")
+
+    # Function to install Python 3 if not already installed
+    def install_python3():
+        try:
+            subprocess.check_call(['sudo', 'apt', 'update'])
+            subprocess.check_call(['sudo', 'apt', 'install', 'python3'])
+            print("Python 3 installed successfully.")
+        except subprocess.CalledProcessError as e:
+            print(f"Failed to install Python 3: {e}")
 
     # Check for supported Ubuntu versions (20.04, 22.04, and 22.10)
     if os_name == 'Linux' and os_version in ['20.04', '22.04', '22.10']:
