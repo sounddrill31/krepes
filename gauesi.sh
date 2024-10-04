@@ -10,7 +10,6 @@ echo " LET THAT SYNC IN "
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Set up build environment
-export USE_MICROG=true
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=pemburutempek
 . build/envsetup.sh
