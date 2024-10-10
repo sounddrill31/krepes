@@ -27,7 +27,7 @@ chmod a+x ~/bin/repo
 echo 'done, you can enjoy build Custom ROM'
 sleep 3
 echo 'Closing in 5'
-sleep 3
+sleep 
 echo 'Closing in 4'
 sleep 3
 echo 'Closing in 3'
