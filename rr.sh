@@ -3,7 +3,7 @@ sudo apt-get update -y && sudo apt-get install dialog bash sed wget git curl zip
 rm -rf .repo/local_manifests/
 find . -delete
 
-repo init -u https://github.com/Frostleaft07/platform_manifest -b Q --depth=1
+repo init -u https://github.com/LineageOS/android.git -b lineage-17.1 --depth=1
 
 mkdir -p .repo/local_manifests
 
