@@ -10,7 +10,7 @@ mkdir -p .repo/local_manifests
 /opt/crave/resync.sh ; repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b rrq device/realme/RMX2185
+git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b losq device/realme/RMX2185
 git clone https://github.com/Frostleaft07/vendor_realme_RMX2185 -b nightmare vendor/realme/RMX2185
 git clone https://github.com/Frostleaft07/android_kernel_realme_mt6765 kernel/realme/mt6765
 # git clone --depth=1 https://android.googlesource.com/platform/prebuilts/vndk/v29 -b android10-mainline-resolv-release prebuilts/vndk/v29
@@ -28,7 +28,7 @@ export BUILD_USERNAME=Frost
 export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
-lunch rr_RMX2185-userdebug
+lunch lineage_RMX2185-userdebug
 mka bacon
 
 cd out/target/product/RMX2185/
