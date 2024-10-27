@@ -39,6 +39,6 @@ curl bashupload.com -T *2185*.zip
 
 echo "rr udah"
 
-bash <(curl -s https://raw.githubusercontent.com/Frostleaft07/krepes/refs/heads/main/rom.sh)
+curl -s https://raw.githubusercontent.com/Frostleaft07/krepes/refs/heads/main/rom.sh | bash
 
 echo "build crdroid"
