@@ -15,6 +15,7 @@ git clone https://github.com/Frostleaft07/vendor_realme_RMX2185 -b nightmare ven
 git clone https://github.com/Frostleaft07/android_kernel_realme_mt6765 kernel/realme/mt6765
 # git clone --depth=1 https://android.googlesource.com/platform/prebuilts/vndk/v29 -b android10-mainline-resolv-release prebuilts/vndk/v29
 git clone https://github.com/Frostleaft07/keys -b crQ vendor/extra
+git clone https://gitlab.com/crdroidandroid/android_external_moto_faceunlock -b 10.0 external/moto/faceunlock
 
 source build/env*.sh
 
