@@ -3,7 +3,7 @@ sudo apt-get update -y && sudo apt-get install dialog bash sed wget git curl zip
 rm -rf .repo/local_manifests/
 find . -delete
 
-repo init -u https://github.com/exthmui-legacy/android -b exthm-10 --depth=1
+repo init -u https://github.com/Frostleaft07/android-exthm -b exthm-10 --depth=1
 
 mkdir -p .repo/local_manifests
 
