@@ -25,7 +25,7 @@ git clone --depth=1 https://android.googlesource.com/platform/packages/apps/Mana
 otsu=$(pwd)
 depis=device/realme/RMX2185
 
-export BUILD_USERNAME=Frost
+export BUILD_USERNAME=frost
 export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
