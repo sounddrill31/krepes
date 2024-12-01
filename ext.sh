@@ -3,15 +3,15 @@ sudo apt-get update -y && sudo apt-get install dialog bash sed wget git curl zip
 rm -rf .repo/local_manifests/
 find . -delete
 
-repo init -u https://github.com/Frostleaft07/android-exthm -b exthm-10 --depth=1
+repo init -u https://github.com/Frostleaft07/android-exthm -b exthm-11 --depth=1
 
 mkdir -p .repo/local_manifests
 
 /opt/crave/resync.sh ; repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b exthm-10 device/realme/RMX2185
-git clone https://github.com/Frostleaft07/vendor_realme_RMX2185 -b nightmare vendor/realme/RMX2185
+git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b exthm-11 device/realme/RMX2185
+git clone https://github.com/Frostleaft07/vendor_realme_RMX2185 -b N11 vendor/realme/RMX2185
 # git clone https://github.com/Frostleaft07/android_kernel_realme_mt6765 kernel/realme/mt6765
 # git clone --depth=1 https://android.googlesource.com/platform/prebuilts/vndk/v29 -b android10-mainline-resolv-release prebuilts/vndk/v29
 git clone https://github.com/Frostleaft07/keys -b crQ vendor/extra
@@ -19,8 +19,8 @@ git clone https://github.com/Frostleaft07/keys -b crQ vendor/extra
 ls build
 source build/env*.sh
 
-rm -rf packages/apps/ManagedProvisioning
-git clone --depth=1 https://android.googlesource.com/platform/packages/apps/ManagedProvisioning -b android10-release packages/apps/ManagedProvisioning
+# rm -rf packages/apps/ManagedProvisioning
+# git clone --depth=1 https://android.googlesource.com/platform/packages/apps/ManagedProvisioning -b android10-release packages/apps/ManagedProvisioning
 
 otsu=$(pwd)
 depis=device/realme/RMX2185
