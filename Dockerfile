@@ -69,7 +69,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir rom && cd rom && repo init -u https://github.com/Frostleaft07/android-exthm -b exthm-11 --depth=1 --no-repo-verify && \
     mkdir -p .repo/local_manifests && \
-    /opt/crave/resync.sh && \
     repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
     
 RUN git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b exthm-11 device/realme/RMX2185 && \
