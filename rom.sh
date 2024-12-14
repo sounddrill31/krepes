@@ -16,8 +16,8 @@ git clone https://github.com/Frostleaft07/keys -b crQ vendor/extra
 ls build
 source build/env*.sh
 
-#rm -rf packages/apps/ManagedProvisioning
-#git clone --depth=1 https://android.googlesource.com/platform/packages/apps/ManagedProvisioning -b android10-release packages/apps/ManagedProvisioning
+rm -rf packages/apps/ManagedProvisioning
+git clone --depth=1 https://android.googlesource.com/platform/packages/apps/ManagedProvisioning -b android11-release packages/apps/ManagedProvisioning
 rm -rf packages/providers/DownloadProvider/
 git clone https://android.googlesource.com/platform/packages/providers/DownloadProvider -b android11-release packages/providers/DownloadProvider
 
