@@ -29,7 +29,7 @@ export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
 lunch lineage_RMX2185-userdebug
-brunch RMX2185
+make bacon
 
 cd out/target/product/RMX2185/
 
