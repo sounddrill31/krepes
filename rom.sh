@@ -33,6 +33,6 @@ make bacon
 
 cd out/target/product/RMX2185/
 
-curl bashupload.com -T *-*2185*.zip
+curl bashupload.com -T LineageFE-v11.6*2185*.zip
 
-curl bashupload.com -T *-*2185*.zip
+curl bashupload.com -T LineageFE-v11.6*2185*.zip
