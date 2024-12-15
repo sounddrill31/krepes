@@ -20,6 +20,8 @@ rm -rf packages/apps/ManagedProvisioning
 git clone --depth=1 https://android.googlesource.com/platform/packages/apps/ManagedProvisioning -b android11-release packages/apps/ManagedProvisioning
 rm -rf packages/providers/DownloadProvider/
 git clone https://android.googlesource.com/platform/packages/providers/DownloadProvider -b android11-release packages/providers/DownloadProvider
+rm -rf packages/apps/Settings
+git clone https://github.com/Frostleaft07/android_packages_apps_Settings-fe -b lineage-18.1 packages/apps/Settings
 
 otsu=$(pwd)
 depis=device/realme/RMX2185
