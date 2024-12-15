@@ -26,7 +26,7 @@ git clone https://github.com/Frostleaft07/android_packages_apps_Settings-fe -b l
 otsu=$(pwd)
 depis=device/realme/RMX2185
 
-export BUILD_USERNAME=Frost
+export BUILD_USERNAME=frost
 export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
