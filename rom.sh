@@ -8,7 +8,7 @@ repo init -u https://github.com/Los-FE/manifest -b lineage-18.1 --depth=1
 /opt/crave/resync.sh ; repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b exthm-11 device/realme/RMX2185
-git clone https://github.com/Frostleaft07/vendor_realme_RMX2185 -b nst-11 vendor/realme/RMX2185
+git clone https://github.com/Frostleaft07/vendor_realme_RMX2185 -b N11 vendor/realme/RMX2185
 git clone https://github.com/Frostleaft07/android_kernel_realme_mt6765 kernel/realme/mt6765
 # git clone --depth=1 https://android.googlesource.com/platform/prebuilts/vndk/v29 -b android10-mainline-resolv-release prebuilts/vndk/v29
 git clone https://github.com/Frostleaft07/keys -b crQ vendor/extra
@@ -30,7 +30,7 @@ export BUILD_USERNAME=frost
 export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
-lunch lineage_RMX2185-userdebug
+lunch lineage_RMX2185-user
 make bacon
 
 cd out/target/product/RMX2185/
