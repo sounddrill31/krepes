@@ -30,7 +30,7 @@ export BUILD_USERNAME=frost
 export BUILD_HOSTNAME=otsu-builder
 export TZ=Asia/Jakarta
 
-lunch lineage_RMX2185-user
+lunch lineage_RMX2185-userdebug
 make bacon
 
 cd out/target/product/RMX2185/
