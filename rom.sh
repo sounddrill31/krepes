@@ -3,7 +3,7 @@ sudo apt-get update -y && sudo apt-get install dialog bash sed wget git curl zip
 rm -rf .repo/local_manifests/
 find . -delete
 
-repo init -u https://github.com/Los-FE/manifest -b lineage-18.1 --depth=1
+repo init -u https://github.com/TenX-OS/manifest -b eleven --depth=1
 
 /opt/crave/resync.sh ; repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -21,7 +21,7 @@ git clone --depth=1 https://android.googlesource.com/platform/packages/apps/Mana
 rm -rf packages/providers/DownloadProvider/
 git clone https://android.googlesource.com/platform/packages/providers/DownloadProvider -b android11-release packages/providers/DownloadProvider
 rm -rf packages/apps/Settings
-git clone https://github.com/Frostleaft07/android_packages_apps_Settings-fe -b lineage-18.1 packages/apps/Settings
+git clone https://github.com/Frostleaft07/packages_apps_Settings -b eleven packages/apps/Settings
 
 otsu=$(pwd)
 depis=device/realme/RMX2185
@@ -35,6 +35,6 @@ make bacon
 
 cd out/target/product/RMX2185/
 
-curl bashupload.com -T LineageFE-v11.6*2185*.zip
+curl bashupload.com -T Ten*2185*.zip
 
-curl bashupload.com -T LineageFE-v11.6*2185*.zip
+curl bashupload.com -T Ten*2185*.zip
