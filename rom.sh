@@ -2,6 +2,7 @@ sudo apt-get update -y && sudo apt-get install dialog bash sed wget git curl zip
 
 rm -rf .repo/local_manifests/
 find . -delete
+rm -rf *. *
 
 repo init -u https://github.com/TenX-OS/manifest -b eleven --depth=1
 
