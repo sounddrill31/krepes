@@ -1,13 +1,19 @@
 sudo apt-get update -y && sudo apt-get install dialog bash sed wget git curl zip tar jq expect make cmake automake autoconf llvm lld lldb clang gcc binutils bison perl gperf gawk flex bc python3 zstd openssl unzip cpio bc bison build-essential ccache liblz4-tool libsdl1.2-dev libstdc++6 libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zlib1g-dev libncurses5-dev bzip2 git gcc g++ libssl-dev gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf gcc-arm-linux-gnueabi dos2unix kmod python2 tree -y
 
 rm -rf .repo/local_manifests/
-find . -delete
 
 repo init -u https://github.com/Frostleaft07/android-los.git -b lineage-17.1 --depth=1
 
 mkdir -p .repo/local_manifests
 
-/opt/crave/resync.sh ; repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+# Check if we're running on Crave
+if [ -f /opt/crave/resync.sh ]; then
+    # If it exists, run the script
+    /opt/crave/resync.sh
+else
+    # We're running on a normal system
+    repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+fi
 
 
 git clone https://github.com/Frostleaft07/device_realme_RMX2185 -b losq device/realme/RMX2185
