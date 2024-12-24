@@ -6,9 +6,14 @@ git clone https://github.com/nathannxx/local_manifests_treble --depth 1 -b trebl
 
 # Sync the repositories
 echo " LET THAT SYNC IN "
-/opt/crave/resync.sh
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+# Check if we're running on Crave
+if [ -f /opt/crave/resync.sh ]; then
+    # If it exists, run the script
+    /opt/crave/resync.sh
+else
+    # We're running on a normal system
+    repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+fi
 # Set up build environment
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=pemburutempek

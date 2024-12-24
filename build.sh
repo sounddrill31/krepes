@@ -6,8 +6,14 @@ git clone https://github.com/nathannxx/local_manifests_nss.git --depth 1 -b nss 
 
 # Sync the repositories
 echo "Sync begin"
-/opt/crave/resync.sh
-repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
+# Check if we're running on Crave
+if [ -f /opt/crave/resync.sh ]; then
+    # If it exists, run the script
+    /opt/crave/resync.sh
+else
+    # We're running on a normal system
+    repo sync --no-tags --no-clone-bundle --force-sync -j1 --fail-fast
+fi
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
